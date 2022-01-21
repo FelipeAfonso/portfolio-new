@@ -1,30 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `portfolio`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Gatsby Tailwind CSS ➕ Emotion Starter`,
+    description: `A bare-bones Tailwind CSS + Emotion starter to kickoff your project.`,
+    author: `@pauloelias`,
   },
   plugins: [
+    `gatsby-plugin-emotion`,
     `gatsby-plugin-postcss`,
-    {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "3204305538",
-      },
-    },
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        icon: "src/images/icon.png",
-      },
-    },
-    "gatsby-plugin-mdx",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "pages",
-        path: "./src/pages/",
-      },
-      __key: "pages",
-    },
+    `gatsby-plugin-react-helmet`,
   ],
-};
+}

@@ -1,54 +1,35 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import tw from "twin.macro"
+import React from "react"
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+import SEO from "../components/seo"
+import Layout from "../components/layout"
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+const Wrapper = tw.div`
+  flex items-center justify-center flex-col h-screen
+`
 
-// markup
-const NotFoundPage = () => {
+const Main = tw.div`
+  p-6 bg-gray-100 rounded-lg shadow-2xl
+`
+
+const Heading = tw.h1`
+  text-2xl text-gray-500 uppercase
+`
+
+const Text = tw.p`
+  text-xl text-gray-700
+`
+
+export default function Custom404() {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <Layout>
+      <Wrapper>
+        <SEO title="Page Not Found" />
+        <Main>
+          <Heading>Oops!</Heading>
+          <Text>We can't find the page that you are looking for.</Text>
+        </Main>
+      </Wrapper>
+    </Layout>
   )
 }
-
-export default NotFoundPage
