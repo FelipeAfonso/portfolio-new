@@ -15,6 +15,7 @@ export type Project = {
   description: string;
   link?: string;
   workedWith?: string[];
+  images?: string[];
 };
 
 export type Library = {
