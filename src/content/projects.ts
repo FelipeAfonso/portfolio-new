@@ -19,7 +19,7 @@ export const projects: Record<string, Project> = {
     title: "AG Platform Flora",
     description: `Flora is the internal name of the Santos Lab's main software. It is a web platform for farmers and agronomists to explore data from different origins in their properties. It contemplates complex web maps, dashboard with unique charts, lots of forms and exotic components.
     I've started alone with the MVP in 2019 which laid the foundation for the platform. My team and I delivered the full version of the original features in 2020. And in 2021 in partnership with a major food exporter from Brazil, we created a sustainability module. In all these steps I was the main developer onboard.`,
-    link: "https://flora.santoslab.com (No Public Sign Up)",
+    link: "https://flora.santoslab.com",
     images: [Flora1, Flora2, Flora3, Flora4, Flora5],
     workedWith: [
       "React.js",

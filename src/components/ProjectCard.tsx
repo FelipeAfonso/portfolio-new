@@ -8,7 +8,7 @@ export const ProjectCard: FC<{ project: Project; projectKey: string }> = ({
 }) => {
   return (
     <Link
-      to={`/project/${projectKey}`}
+      href={`/project/${projectKey}`}
       className="bg-white bg-opacity-10 min-w-full sm:min-w-min sm:w-96 p-2 rounded cursor-pointer"
     >
       <p className="text-2xl text-gray-50 font-bold">{project.title}</p>
