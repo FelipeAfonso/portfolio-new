@@ -1,6 +1,8 @@
 import { Link, Redirect, useLocation, useRoute } from "wouter";
 import { projects } from "../content/projects";
 import { MdArrowBack } from "react-icons/md";
+import { useState } from "react";
+import { ImageCarousel } from "./ImageCarousel";
 
 const bgOptions = [
   "bg-blue-900",
@@ -62,10 +64,7 @@ export const ProjectPage = () => {
       )}
       {selectedProject.images?.length && (
         <div>
-          <img
-            className="w-full sm:w-3/4 object-contain my-4"
-            src={selectedProject.images[0]}
-          />
+          <ImageCarousel images={selectedProject.images} />
         </div>
       )}
     </div>
