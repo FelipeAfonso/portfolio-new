@@ -4,7 +4,10 @@ import { BsFileEarmarkPdfFill, BsLinkedin } from "react-icons/bs";
 import { Link } from "react-router-dom";
 export const Contact = () => {
   return (
-    <div className="min-h-screen min-w-full bg-violet-900 flex flex-col p-4 items-center gap-4 ">
+    <div
+      id="contact"
+      className="min-h-screen min-w-full bg-violet-900 flex flex-col p-4 items-center gap-4 "
+    >
       <a
         href="/resume.pdf"
         className="self-end justify-self-start cursor-pointer text-gray-50 flex flex-row items-center gap-2"

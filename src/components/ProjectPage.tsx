@@ -1,7 +1,6 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { projects } from "../content/projects";
 import { MdArrowBack } from "react-icons/md";
-import { useState } from "react";
 import { ImageCarousel } from "./ImageCarousel";
 
 const bgOptions = [
@@ -17,18 +16,19 @@ const bgOptions = [
 export const ProjectPage = () => {
   const { key } = useParams<{ key?: string }>();
   const selectedProject = key && projects[key];
-  const navigate = useNavigate();
+
   const randomSeed = Math.floor(Math.random() * bgOptions.length);
-  if (!key || !selectedProject) navigate("/");
+
   return key && selectedProject ? (
     <div className={`min-h-screen min-w-full p-8 ${bgOptions[randomSeed]}`}>
       <div className="flex gap-2">
         <div className="flex items-center gap-2">
-          <MdArrowBack
-            className="text-gray-50 cursor-pointer rounded-full p-1 hover:bg-gray-50 hover:bg-opacity-20 hover:animate-pulse"
-            onClick={() => navigate("/")}
-            size={28}
-          />
+          <Link to="/#projects" reloadDocument>
+            <MdArrowBack
+              className="text-gray-50 cursor-pointer rounded-full p-1 hover:bg-gray-50 hover:bg-opacity-20 hover:animate-pulse"
+              size={28}
+            />
+          </Link>
           <h1 className="text-4xl text-gray-50 font-bold">
             {selectedProject.title}
           </h1>
@@ -39,8 +39,8 @@ export const ProjectPage = () => {
         {selectedProject.description}
       </h3>
       {selectedProject.link && (
-        <Link
-          to={selectedProject.link}
+        <a
+          href={selectedProject.link}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -60,7 +60,7 @@ export const ProjectPage = () => {
           >
             Acesse o projeto!
           </button>
-        </Link>
+        </a>
       )}
       {selectedProject.images?.length && (
         <div>
@@ -68,5 +68,7 @@ export const ProjectPage = () => {
         </div>
       )}
     </div>
-  ) : null;
+  ) : (
+    <Navigate to="/#projects" />
+  );
 };
