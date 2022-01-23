@@ -32,7 +32,7 @@ export const Header = () => {
       <h2 className="text-3xl text-center text-gray-50">
         {`And also ${
           vowels.includes(selectedHighlight[0].toLowerCase()) ? "an" : "a"
-        }  ${selectedHighlight}`}
+        }  ${selectedHighlight}.`}
       </h2>
     </div>
   );
