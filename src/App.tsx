@@ -1,7 +1,9 @@
+import { Header } from "./components/Header";
+
 function App() {
   return (
     <div>
-      <h1 className="text-2xl font-bold underline m-4">Hello World</h1>
+      <Header />
     </div>
   );
 }
