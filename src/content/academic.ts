@@ -7,7 +7,7 @@ export const academic: Record<string, Experience> = {
     location: "São Carlos - São Paulo, Brazil",
     startDate: "March 2017",
     endDate: "June 2020",
-    description: `Within the area of Software Engineering with an enphasis on Cross-platform web and mobile development, I have created a number of proof of concept apps with different cross-platform frameworks. I also interviewed a lot of professionals working in the software industry.
+    description: `Within the area of Software Engineering with an emphasis on Cross-platform web and mobile development, I have created a number of proof of concept apps with different cross-platform frameworks. I also interviewed a lot of professionals working in the software industry.
     I was a scholarship Master's degree student for the first 24 months, therefore I had an exclusive dedication contract. During this period all projects that I participated were volunteer and independent works.`,
     workedWith: [
       "React.js",
