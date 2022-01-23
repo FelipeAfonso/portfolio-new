@@ -1,5 +1,6 @@
-import { Link, Redirect, useRoute } from "wouter";
+import { Link, Redirect, useLocation, useRoute } from "wouter";
 import { projects } from "../content/projects";
+import { MdArrowBack } from "react-icons/md";
 
 const bgOptions = [
   "bg-blue-900",
@@ -14,14 +15,23 @@ const bgOptions = [
 export const ProjectPage = () => {
   const [match, params] = useRoute("/project/:key");
   const selectedProject = params && projects[params.key];
-
+  const [location, setLocation] = useLocation();
   const randomSeed = Math.floor(Math.random() * bgOptions.length);
 
   return match && selectedProject ? (
     <div className={`min-h-screen min-w-full p-8 ${bgOptions[randomSeed]}`}>
-      <h1 className="text-4xl text-gray-50 font-bold">
-        {selectedProject.title}
-      </h1>
+      <div className="flex gap-2">
+        <div className="flex items-center gap-2">
+          <MdArrowBack
+            className="text-gray-50 cursor-pointer rounded-full p-1 hover:bg-gray-50 hover:bg-opacity-20 hover:animate-pulse"
+            onClick={() => setLocation("/")}
+            size={28}
+          />
+          <h1 className="text-4xl text-gray-50 font-bold">
+            {selectedProject.title}
+          </h1>
+        </div>
+      </div>
       <hr />
       <h3 className="text-lg text-gray-50 py-2">
         {selectedProject.description}
