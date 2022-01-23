@@ -11,10 +11,12 @@ specifiers:
   tailwindcss: ^3.0.15
   typescript: ^4.4.4
   vite: ^2.7.2
+  wouter: ^2.8.0-alpha.2
 
 dependencies:
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  wouter: 2.8.0-alpha.2_react@17.0.2
 
 devDependencies:
   '@types/react': 17.0.38
@@ -1254,6 +1256,14 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /wouter/2.8.0-alpha.2_react@17.0.2:
+    resolution: {integrity: sha512-aPsL5m5rW9RiceClOmGj6t5gn9Ut2TJVr98UDi1u9MIRNYiYVflg6vFIjdDYJ4IAyH0JdnkSgGwfo0LQS3k2zg==}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      react: 17.0.2
+    dev: false
 
   /xtend/4.0.2:
     resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}

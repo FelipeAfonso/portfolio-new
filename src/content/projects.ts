@@ -50,7 +50,7 @@ export const projects: Record<string, Project> = {
     ],
   },
   floraMonitoring: {
-    title: "Pest and Prague Monitoring App",
+    title: "Prague Monitoring App",
     description: `I was the main developer and managed a team of 4 other front end developers for a React Native app for Android and iOS. The app was made to monitor pests and plagues in farms and its fields. It was offline first as the connectivity in these places tend to be limited. And as a map-centric app we had to build extra features on top of Google Maps API. As the company is not opening for public users the app is not published on the stores yet. But it is in use by farmers and agronomists associated with Santos Lab.`,
     images: [FloraApp1, FloraApp2, FloraApp3, FloraApp4, FloraApp5],
     workedWith: [
