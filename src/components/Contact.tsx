@@ -1,7 +1,9 @@
-import { MdMail } from "react-icons/md";
+import { MdCopyAll, MdMail } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 import { BsFileEarmarkPdfFill, BsLinkedin } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import Tippy from "@tippyjs/react";
+//import "tippy.js/dist/tippy.css";
+
 export const Contact = () => {
   return (
     <div
@@ -18,10 +20,35 @@ export const Contact = () => {
       </a>
       <div className="flex flex-col items-center justify-center flex-1 gap-3">
         <h1 className="text-5xl text-gray-50">Contact me!</h1>
-        <div className="flex flex-row items-center gap-2 text-gray-50">
-          <MdMail size={36} />
-          <h3 className="text-3xl underline">fmunhozafonso@gmail.com</h3>
-        </div>
+        <form
+          className="flex flex-row gap-2 items-center"
+          action="mailto:fmunhozafonso@gmail.com"
+          method="POST"
+        >
+          <button
+            className="flex flex-row items-center gap-2 text-gray-50"
+            type="submit"
+          >
+            <MdMail size={36} />
+            <h3 className="text-3xl underline">fmunhozafonso@gmail.com</h3>
+          </button>
+          <Tippy
+            content={
+              <text className="text-gray-50 text-base">Copy to clipboard</text>
+            }
+          >
+            <div>
+              <MdCopyAll
+                size={24}
+                className="text-gray-50 cursor-pointer rounded-full p-1 hover:bg-gray-50 hover:bg-opacity-20 hover:animate-pulse"
+                onClick={() =>
+                  navigator.clipboard.writeText("fmunhozafonso@gmail.com")
+                }
+              />
+            </div>
+          </Tippy>
+        </form>
+
         <a
           href="https://github.com/FelipeAfonso"
           target="_blank"
