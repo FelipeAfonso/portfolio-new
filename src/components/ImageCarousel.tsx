@@ -6,9 +6,19 @@ export const ImageCarousel: FC<{
 }> = ({ images }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   return (
-    <div className="w-full h-full relative">
+    <div
+      className="w-full h-full relative"
+      style={{
+        userSelect: "none",
+      }}
+    >
       <img
         className="w-full h-screen object-contain bg-black my-4"
+        style={{
+          userSelect: "none",
+          MozUserSelect: "none",
+          WebkitUserSelect: "none",
+        }}
         src={images[selectedImageIndex]}
       />
       <MdChevronLeft
