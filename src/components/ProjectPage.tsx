@@ -58,9 +58,21 @@ export const ProjectPage = () => {
               hover:animate-pulse
             `}
           >
-            Acesse o projeto!
+            Link to the project
           </button>
         </a>
+      )}
+      {selectedProject.workedWith?.length && (
+        <>
+          <h3 className="text-3xl text-gray-50 my-2">Tech Stack</h3>
+          <div className="flex flex-wrap gap-2">
+            {selectedProject.workedWith?.map((k) => (
+              <div className="bg-gray-50 bg-opacity-10 p-1 rounded">
+                <text className="text-gray-50">{k}</text>
+              </div>
+            ))}
+          </div>
+        </>
       )}
       {selectedProject.images?.length && (
         <div>
