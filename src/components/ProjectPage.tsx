@@ -1,4 +1,4 @@
-import { Link, Redirect, useLocation, useRoute } from "wouter";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { projects } from "../content/projects";
 import { MdArrowBack } from "react-icons/md";
 import { useState } from "react";
@@ -15,18 +15,18 @@ const bgOptions = [
 ];
 
 export const ProjectPage = () => {
-  const [match, params] = useRoute("/project/:key");
-  const selectedProject = params && projects[params.key];
-  const [location, setLocation] = useLocation();
+  const { key } = useParams<{ key?: string }>();
+  const selectedProject = key && projects[key];
+  const navigate = useNavigate();
   const randomSeed = Math.floor(Math.random() * bgOptions.length);
-
-  return match && selectedProject ? (
+  if (!key || !selectedProject) navigate("/");
+  return key && selectedProject ? (
     <div className={`min-h-screen min-w-full p-8 ${bgOptions[randomSeed]}`}>
       <div className="flex gap-2">
         <div className="flex items-center gap-2">
           <MdArrowBack
             className="text-gray-50 cursor-pointer rounded-full p-1 hover:bg-gray-50 hover:bg-opacity-20 hover:animate-pulse"
-            onClick={() => setLocation("/")}
+            onClick={() => navigate("/")}
             size={28}
           />
           <h1 className="text-4xl text-gray-50 font-bold">
@@ -40,7 +40,7 @@ export const ProjectPage = () => {
       </h3>
       {selectedProject.link && (
         <Link
-          href={selectedProject.link}
+          to={selectedProject.link}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -68,7 +68,5 @@ export const ProjectPage = () => {
         </div>
       )}
     </div>
-  ) : (
-    <Redirect to="/" />
-  );
+  ) : null;
 };

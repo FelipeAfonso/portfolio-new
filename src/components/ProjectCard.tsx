@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { Project } from "../types";
 
 export const ProjectCard: FC<{ project: Project; projectKey: string }> = ({
@@ -8,8 +8,9 @@ export const ProjectCard: FC<{ project: Project; projectKey: string }> = ({
 }) => {
   return (
     <Link
-      href={`/project/${projectKey}`}
+      to={`/project/${projectKey}`}
       className="bg-white bg-opacity-10 min-w-full sm:min-w-min sm:w-96 p-2 rounded cursor-pointer"
+      reloadDocument
     >
       <p className="text-2xl text-gray-50 font-bold">{project.title}</p>
       {project.images?.[0] ? (
