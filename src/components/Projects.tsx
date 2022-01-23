@@ -8,8 +8,8 @@ export const Projects = () => {
         Here are some recent projects I created!
       </h2>
       <div className="flex flex-wrap gap-4 m-2">
-        {Object.values(projects).map((p, i) => (
-          <ProjectCard key={i} project={p} />
+        {Object.keys(projects).map((k) => (
+          <ProjectCard key={k} projectKey={k} project={projects[k]} />
         ))}
       </div>
     </div>

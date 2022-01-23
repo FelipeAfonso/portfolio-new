@@ -1,9 +1,16 @@
 import { FC } from "react";
+import { Link } from "wouter";
 import { Project } from "../types";
 
-export const ProjectCard: FC<{ project: Project }> = ({ project }) => {
+export const ProjectCard: FC<{ project: Project; projectKey: string }> = ({
+  project,
+  projectKey,
+}) => {
   return (
-    <div className="bg-white bg-opacity-10 min-w-full sm:min-w-min sm:w-96 p-2 rounded cursor-pointer">
+    <Link
+      to={`/project/${projectKey}`}
+      className="bg-white bg-opacity-10 min-w-full sm:min-w-min sm:w-96 p-2 rounded cursor-pointer"
+    >
       <p className="text-2xl text-gray-50 font-bold">{project.title}</p>
       {project.images?.[0] ? (
         <img
@@ -18,6 +25,6 @@ export const ProjectCard: FC<{ project: Project }> = ({ project }) => {
           )}${project.description.length > 330 ? "..." : ""}`}</text>
         </div>
       )}
-    </div>
+    </Link>
   );
 };
