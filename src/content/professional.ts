@@ -72,7 +72,7 @@ export const professional: Record<string, Experience> = {
     startDate: "February 2018",
     endDate: "June 2018",
     description:
-      "Along with 2 other colleagues from my Master's Course participated in a startup contest for Itaú (one of Brazil's largest banks). We developed a micro-investing app which would integrate to its bank account (through Itaú's APIs) and round up every purchase from the credit card.  That rounding up would be accumulated in a separate account and be invested in a trading fund. The app was made with native java android SDK for the front end, and integrated with an REST api. We didn't ended up on the top 3, but during the process we stumbled on various (mostly legal) complications and it was an enlighting experience for my career and problem solving skills.",
+      "Along with 2 other colleagues from my Master's Course participated in a startup contest for Itaú (one of Brazil's largest banks). We developed a micro-investing app which would integrate to its bank account (through Itaú's APIs) and round up every purchase from the credit card.  That rounding up would be accumulated in a separate account and be invested in a trading fund. The app was made with native java android SDK for the front end, and integrated with an REST api. We didn't ended up on the top 3, but during the process we stumbled on various (mostly legal) complications and it was an enlightening experience for my career and problem solving skills.",
     workedWith: ["Java", "Android SDK", "REST APIs", "JWT"],
   },
   meyerPublicity: {

@@ -25,7 +25,7 @@ export const academic: Record<string, Experience> = {
     ],
   },
   mentor1: {
-    title: "Egress Student Mentor",
+    title: "Graduate Student Mentor",
     company:
       "IFSP (Federal Institute of science, technology and education of São Paulo)",
     location: "Piracicaba - São Paulo, Brazil",
@@ -36,7 +36,7 @@ export const academic: Record<string, Experience> = {
     workedWith: ["Kotlin", "Kotlin/Native", "Android SDK"],
   },
   mentor2: {
-    title: "Egress Student Mentor",
+    title: "Graduate Student Mentor",
     company:
       "IFSP (Federal Institute of science, technology and education of São Paulo)",
     location: "Piracicaba - São Paulo, Brazil",
