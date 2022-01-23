@@ -8,6 +8,7 @@ export const Contact = () => {
       <a
         href="/resume.pdf"
         className="self-end justify-self-start cursor-pointer text-gray-50 flex flex-row items-center gap-2"
+        download
       >
         <BsFileEarmarkPdfFill size={24} />
         <h2 className="text-xl underline">Download my .PDF Resume</h2>
