@@ -8,7 +8,8 @@ export const Contact = () => {
   return (
     <div
       id="contact"
-      className="min-h-screen min-w-full bg-violet-900 flex flex-col p-4 items-center gap-4 "
+      className="min-h-screen min-w-full flex flex-col p-4 items-center gap-4"
+      style={{ backgroundColor: "#025159" }}
     >
       <a
         href="/resume.pdf"

@@ -25,7 +25,10 @@ export const Header = () => {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center  bg-gray-900 p-4 h-screen">
+    <div
+      className="flex flex-col items-center justify-center p-4 h-screen"
+      style={{ backgroundColor: "#03A696" }}
+    >
       <h1 className="text-6xl text-center text-gray-50">
         Hi! I'm Felipe Afonso, <br />a <b>Front End Developer.</b>
       </h1>
