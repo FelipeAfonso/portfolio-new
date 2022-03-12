@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { FC, useState } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import CarouselIndex from "./CarouselIndex";
 
 const swipeConfidenceThreshold = 10000;
 const swipePower = (offset: number, velocity: number) => {
@@ -51,7 +52,7 @@ export const ImageCarousel: FC<{
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
           key={selectedImageIndex}
-          className="w-full h-screen object-contain bg-black my-4 absolute"
+          className="w-full h-screen object-contain bg-black bg-opacity-40 my-4 absolute"
           style={{
             userSelect: "none",
             MozUserSelect: "none",
@@ -90,6 +91,11 @@ export const ImageCarousel: FC<{
         className="text-gray-50 cursor-pointer rounded-full p-1 hover:bg-gray-50 hover:bg-opacity-20 hover:animate-pulse absolute right-2 top-1/2 z-50"
         onClick={() => next()}
         size={48}
+      />
+      <CarouselIndex
+        className="absolute right-1/2 bottom-1 translate-x-1/2 z-50"
+        currentIndex={selectedImageIndex}
+        amount={images.length}
       />
     </div>
   );
