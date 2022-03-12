@@ -6,7 +6,7 @@ export const Projects = () => {
     <div
       id="projects"
       className="flex flex-col items-start justify-center p-4 min-h-screen"
-      style={{ backgroundColor: "#038C8C" }}
+      style={{ background: "linear-gradient(180deg, #038C8C, #025159)" }}
     >
       <h2 className="text-4xl  text-gray-50 m-2">
         Here are some recent projects I created!

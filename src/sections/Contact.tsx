@@ -9,7 +9,7 @@ export const Contact = () => {
     <div
       id="contact"
       className="min-h-screen min-w-full flex flex-col p-4 items-center gap-4"
-      style={{ backgroundColor: "#025159" }}
+      style={{ background: "linear-gradient(180deg, #025159, #012E40)" }}
     >
       <a
         href="/resume.pdf"

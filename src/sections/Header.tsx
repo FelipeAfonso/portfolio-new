@@ -27,12 +27,15 @@ export const Header = () => {
   return (
     <div
       className="flex flex-col items-center justify-center p-4 h-screen"
-      style={{ backgroundColor: "#03A696" }}
+      style={{ background: "linear-gradient(180deg, #03A696, #038C8C)" }}
     >
       <h1 className="text-6xl text-center text-gray-50">
-        Hi! I'm Felipe Afonso, <br />a <b>Front End Developer.</b>
+        Hi! I'm Felipe Afonso, <br /> a{" "}
+        <b>
+          <u style={{ textDecorationColor: "#F28705" }}>Front End Developer.</u>
+        </b>
       </h1>
-      <h2 className="text-3xl text-center text-gray-50">
+      <h2 className="text-3xl text-center text-gray-50 m-2">
         {`And also ${
           vowels.includes(selectedHighlight[0].toLowerCase()) ? "an" : "a"
         }  ${selectedHighlight}.`}
