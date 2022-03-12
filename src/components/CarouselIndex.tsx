@@ -16,6 +16,7 @@ const variants = {
   },
   visible: (active: boolean) => ({
     opacity: 1,
+    width: active ? "2rem" : "0.75rem",
     backgroundColor: active ? "#F28705" : "#fefefe",
   }),
 };

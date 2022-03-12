@@ -31,7 +31,7 @@ export const Contact = () => {
             type="submit"
           >
             <MdMail size={36} />
-            <h3 className="text-3xl underline">fmunhozafonso@gmail.com</h3>
+            <h3 className="text-xl underline">fmunhozafonso@gmail.com</h3>
           </button>
           <Tippy
             content={
@@ -57,7 +57,7 @@ export const Contact = () => {
           className="flex flex-row items-center gap-2 text-gray-50"
         >
           <FaGithub size={36} />
-          <h3 className="text-3xl underline">@FelipeAfonso</h3>
+          <h3 className="text-xl underline">@FelipeAfonso</h3>
         </a>
         <a
           href="https://www.linkedin.com/in/felipe-afonso/?locale=en_US"
@@ -66,7 +66,7 @@ export const Contact = () => {
           className="flex flex-row items-center gap-2 text-gray-50"
         >
           <BsLinkedin size={36} />
-          <h3 className="text-3xl underline">LinkedIn</h3>
+          <h3 className="text-xl underline">LinkedIn</h3>
         </a>
       </div>
     </div>

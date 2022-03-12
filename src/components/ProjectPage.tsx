@@ -3,24 +3,26 @@ import { projects } from "../content/projects";
 import { MdArrowBack } from "react-icons/md";
 import { ImageCarousel } from "./ImageCarousel";
 
-const bgOptions = [
-  "bg-blue-900",
-  "bg-cyan-900",
-  "bg-green-900",
-  "bg-teal-900",
-  "bg-indigo-900",
-  "bg-lime-900",
-  "bg-slate-900",
-];
+const bgOptions = ["#03A696", "#025159", "#012E40"];
 
 export const ProjectPage = () => {
   const { key } = useParams<{ key?: string }>();
   const selectedProject = key && projects[key];
 
-  const randomSeed = Math.floor(Math.random() * bgOptions.length);
+  const randomSeeds = [
+    Math.floor(Math.random() * bgOptions.length),
+    Math.floor(Math.random() * bgOptions.length),
+  ];
 
   return key && selectedProject ? (
-    <div className={`min-h-screen min-w-full p-8 ${bgOptions[randomSeed]}`}>
+    <div
+      className={`min-h-screen min-w-full p-8`}
+      style={{
+        background: `linear-gradient(0deg, ${bgOptions[randomSeeds[0]]}, ${
+          bgOptions[randomSeeds[1]]
+        })`,
+      }}
+    >
       <div className="flex gap-2">
         <div className="flex items-center gap-2">
           <Link to="/#projects" reloadDocument>
@@ -35,47 +37,55 @@ export const ProjectPage = () => {
         </div>
       </div>
       <hr />
-      <h3 className="text-lg text-gray-50 py-2">
-        {selectedProject.description}
-      </h3>
-      {selectedProject.link && (
-        <a
-          href={selectedProject.link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button
-            className={`
+      <div className="md:flex md:flex-row gap-2 my-2">
+        <div className="md:flex-8">
+          <h3 className="text-lg text-gray-50">
+            {selectedProject.description}
+          </h3>
+          {selectedProject.link && (
+            <a
+              href={selectedProject.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button
+                className={`
               bg-transparent 
               rounded 
-              border-gray-50 
-              text-gray-50 
+              border-orange-400
+              text-orange-400
               border-2 p-2 
+              my-3
               uppercase 
               font-bold 
               hover:bg-gray-50 
               hover:bg-opacity-10 
               hover:animate-pulse
             `}
-          >
-            Link to the project
-          </button>
-        </a>
-      )}
-      {selectedProject.workedWith?.length && (
-        <>
-          <h3 className="text-3xl text-gray-50 my-2">Tech Stack</h3>
-          <div className="flex flex-wrap gap-2">
-            {selectedProject.workedWith?.map((k) => (
-              <div className="bg-gray-50 bg-opacity-10 p-1 rounded">
-                <text className="text-gray-50">{k}</text>
-              </div>
-            ))}
+              >
+                Link to the project
+              </button>
+            </a>
+          )}
+        </div>
+
+        {selectedProject.workedWith?.length && (
+          <div className="md:flex-4 md:my-2">
+            <h3 className="text-3xl text-gray-50 mb-2">Tech Stack</h3>
+            <div className="flex flex-wrap gap-2">
+              {selectedProject.workedWith?.map((k) => (
+                <div className="bg-gray-50 bg-opacity-10 p-1 rounded">
+                  <text className="text-gray-50">{k}</text>
+                </div>
+              ))}
+            </div>
           </div>
-        </>
-      )}
+        )}
+      </div>
+
       {selectedProject.images?.length && (
         <div>
+          <h3 className="text-3xl text-gray-50 my-2">Project Images</h3>
           <ImageCarousel images={selectedProject.images} />
         </div>
       )}
