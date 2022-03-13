@@ -31,7 +31,7 @@ export const Header = () => {
       <h1 className="text-6xl text-center text-gray-50">
         Hi! I'm Felipe Afonso, <br /> a{" "}
         <b>
-          <u style={{ textDecorationColor: "#F28705" }}>Front End Developer.</u>
+          <u className="decoration-orange-400">Front End Developer.</u>
         </b>
       </h1>
       <h2 className="text-3xl text-center text-gray-50 m-2">
