@@ -2,6 +2,7 @@ import { MdCopyAll, MdMail } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 import { BsFileEarmarkPdfFill, BsLinkedin } from "react-icons/bs";
 import Tippy from "@tippyjs/react";
+import { motion } from "framer-motion";
 //import "tippy.js/dist/tippy.css";
 
 export const Contact = () => {
@@ -19,7 +20,12 @@ export const Contact = () => {
         <BsFileEarmarkPdfFill size={24} />
         <h2 className="text-xl underline">Download my .PDF Resume</h2>
       </a>
-      <div className="flex flex-col items-center justify-center flex-1 gap-3">
+      <motion.div
+        className="flex flex-col items-center justify-center flex-1 gap-3"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h1 className="text-5xl text-gray-50">Contact me!</h1>
         <form
           className="flex flex-row gap-2 items-center"
@@ -72,7 +78,7 @@ export const Contact = () => {
           <BsLinkedin size={36} />
           <h3 className="text-xl underline decoration-orange-400">LinkedIn</h3>
         </a>
-      </div>
+      </motion.div>
     </div>
   );
 };

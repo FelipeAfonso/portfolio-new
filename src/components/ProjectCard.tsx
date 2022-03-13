@@ -13,8 +13,8 @@ export const ProjectCard: FC<{ project: Project; projectKey: string }> = ({
         scale: 1.07,
         backgroundColor: "#ffffffaa",
       }}
-      initial={{ scale: 0.1 }}
-      whileInView={{ scale: 1 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       className="bg-white bg-opacity-5 min-w-full sm:min-w-min sm:w-96 p-2 rounded cursor-pointer"
     >

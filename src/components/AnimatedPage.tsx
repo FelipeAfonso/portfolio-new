@@ -30,7 +30,6 @@ const AnimatedPage: FC<AnimatedPageProps> = ({ children, direction }) => {
         exit="exit"
         custom={direction}
         variants={variants}
-        className="absolute"
       >
         {children}
       </motion.div>
