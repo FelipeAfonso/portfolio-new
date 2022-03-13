@@ -1,13 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
-
-const vowels = ["a", "e", "i", "o", "u"];
+import Typewriter from "typewriter-effect";
 
 const highlights = [
-  "essentialist",
-  "UX design enthusiast",
-  "map weirdo",
-  "tabletop RPG Dungeon Master",
-  "eternal student",
+  "an essentialist",
+  "an UX design enthusiast",
+  "a map weirdo",
+  "a tabletop RPG Dungeon Master",
+  "an eternal student",
 ];
 
 export const Header = () => {
@@ -36,9 +35,14 @@ export const Header = () => {
         </b>
       </h1>
       <h2 className="text-3xl text-center text-gray-50 m-2">
-        {`And also ${
-          vowels.includes(selectedHighlight[0].toLowerCase()) ? "an" : "a"
-        }  ${selectedHighlight}.`}
+        <span>{"And also "}</span>
+        <Typewriter
+          options={{
+            strings: highlights,
+            autoStart: true,
+            loop: true,
+          }}
+        />
       </h2>
     </div>
   );

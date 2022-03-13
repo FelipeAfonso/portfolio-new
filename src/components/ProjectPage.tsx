@@ -3,7 +3,7 @@ import { projects } from "../content/projects";
 import { MdArrowBack } from "react-icons/md";
 import { ImageCarousel } from "./ImageCarousel";
 
-const bgOptions = ["#03A696", "#025159", "#012E40"];
+const bgOptions = ["#03A696", "#038C8C", "#025159", "#012E40"];
 
 export const ProjectPage = () => {
   const { key } = useParams<{ key?: string }>();
