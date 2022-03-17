@@ -3,8 +3,9 @@ import { projects } from "../content/projects";
 
 export const Projects = () => {
   return (
-    <div
+    <section
       id="projects"
+      title="projects"
       className="flex flex-col items-start justify-center p-4 min-h-screen"
       style={{ background: "linear-gradient(180deg, #038C8C, #025159)" }}
     >
@@ -16,6 +17,6 @@ export const Projects = () => {
           <ProjectCard key={k} projectKey={k} project={projects[k]} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };

@@ -24,7 +24,8 @@ export const Header = () => {
   );
 
   return (
-    <div
+    <section
+      title="header"
       className="flex flex-col items-center justify-center p-4 h-screen"
       style={{ background: "linear-gradient(180deg, #03A696, #038C8C)" }}
     >
@@ -44,6 +45,6 @@ export const Header = () => {
           }}
         />
       </h2>
-    </div>
+    </section>
   );
 };
