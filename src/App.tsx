@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import { Contact } from "./sections/Contact";
-import { Header } from "./sections/Header";
-import { ProjectPage } from "./components/ProjectPage";
-import { Projects } from "./sections/Projects";
 import AnimatedPage from "./components/AnimatedPage";
+
+import Home from "./pages";
+import Project from "./pages/project";
+import Blog from "./pages/blog";
 
 function App() {
   return (
@@ -12,17 +12,16 @@ function App() {
         path="/"
         element={
           <AnimatedPage direction="left">
-            <Header />
-            <Projects />
-            <Contact />
+            <Home />
           </AnimatedPage>
         }
       />
+      <Route path="/blog" element={<Blog />} />
       <Route
         path="/project/:key"
         element={
           <AnimatedPage direction="right">
-            <ProjectPage />
+            <Project />
           </AnimatedPage>
         }
       />

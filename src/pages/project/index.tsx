@@ -1,11 +1,11 @@
 import { Link, Navigate, useParams } from "react-router-dom";
-import { projects } from "../content/projects";
+import { projects } from "../../content/projects";
 import { MdArrowBack } from "react-icons/md";
-import { ImageCarousel } from "./ImageCarousel";
+import { ImageCarousel } from "../../components/ImageCarousel";
 
 const bgOptions = ["#03A696", "#038C8C", "#025159", "#012E40"];
 
-export const ProjectPage = () => {
+export default () => {
   const { key } = useParams<{ key?: string }>();
   const selectedProject = key && projects[key];
 
