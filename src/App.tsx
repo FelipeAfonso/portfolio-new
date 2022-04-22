@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import Home from "./pages";
 import Project from "./pages/project";
 import Blog from "./pages/blog";
+import BlogPost from "./pages/blog/post";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ function App() {
           }
         />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/post/:id" element={<BlogPost />} />
         <Route
           path="/project/:key"
           element={

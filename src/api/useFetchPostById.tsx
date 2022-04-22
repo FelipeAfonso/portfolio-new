@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import { request, gql } from "graphql-request";
 
-export type PostSummary = {
+export type Post = {
   id: string;
   title: string;
   author: {
@@ -20,7 +20,7 @@ export type PostSummary = {
 };
 
 export const useFetchPostById = (id: string) =>
-  useQuery<PostSummary[]>("posts", async () => {
+  useQuery<Post>("posts", async () => {
     const { post } = await request(
       import.meta.env.VITE_CMS_API,
       gql`
