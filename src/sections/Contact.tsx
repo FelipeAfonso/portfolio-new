@@ -7,8 +7,9 @@ import { motion } from "framer-motion";
 
 export const Contact = () => {
   return (
-    <div
+    <section
       id="contact"
+      title="contact"
       className="min-h-screen min-w-full flex flex-col p-4 items-center gap-4"
       style={{ background: "linear-gradient(180deg, #025159, #012E40)" }}
     >
@@ -18,7 +19,9 @@ export const Contact = () => {
         download
       >
         <BsFileEarmarkPdfFill size={24} />
-        <h2 className="text-xl underline">Download my .PDF Resume</h2>
+        <h2 className="text-xl underline decoration-orange-400">
+          Download my .PDF Resume
+        </h2>
       </a>
       <motion.div
         className="flex flex-col items-center justify-center flex-1 gap-3"
@@ -79,6 +82,6 @@ export const Contact = () => {
           <h3 className="text-xl underline decoration-orange-400">LinkedIn</h3>
         </a>
       </motion.div>
-    </div>
+    </section>
   );
 };
