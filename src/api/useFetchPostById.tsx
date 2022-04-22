@@ -2,7 +2,21 @@ import { useQuery } from "react-query";
 import { request, gql } from "graphql-request";
 
 export type PostSummary = {
+  id: string;
   title: string;
+  author: {
+    name: string;
+    picture: {
+      url: string;
+    };
+  };
+  content: {
+    html: string;
+  };
+  coverImage: {
+    url: string;
+  };
+  publishedAt: string;
 };
 
 export const useFetchPostById = (id: string) =>
