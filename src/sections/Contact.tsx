@@ -46,7 +46,7 @@ export const Contact = () => {
           </button>
           <Tippy
             content={
-              <text className="text-gray-50 text-base">Copy to clipboard</text>
+              <p className="text-gray-50 text-base">Copy to clipboard</p>
             }
           >
             <div>

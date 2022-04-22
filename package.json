@@ -16,6 +16,7 @@
     "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
+    "@types/node": "^17.0.25",
     "@types/react": "^18.0.6",
     "@types/react-dom": "^18.0.2",
     "@vitejs/plugin-react": "^1.3.1",

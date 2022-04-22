@@ -74,8 +74,8 @@ export const ProjectPage = () => {
             <h3 className="text-3xl text-gray-50 mb-2">Tech Stack</h3>
             <div className="flex flex-wrap gap-2">
               {selectedProject.workedWith?.map((k) => (
-                <div className="bg-gray-50 bg-opacity-10 p-1 rounded">
-                  <text className="text-gray-50">{k}</text>
+                <div key={k} className="bg-gray-50 bg-opacity-10 p-1 rounded">
+                  <p className="text-gray-50">{k}</p>
                 </div>
               ))}
             </div>

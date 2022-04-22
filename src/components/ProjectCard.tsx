@@ -28,10 +28,10 @@ export const ProjectCard: FC<{ project: Project; projectKey: string }> = ({
           />
         ) : (
           <div className="p-2 h-48 rounded-t bg-black bg-opacity-20">
-            <text className="text-base text-gray-50">{`${project.description.slice(
+            <p className="text-base text-gray-50">{`${project.description.slice(
               0,
               330
-            )}${project.description.length > 330 ? "..." : ""}`}</text>
+            )}${project.description.length > 330 ? "..." : ""}`}</p>
           </div>
         )}
         <p className="text-2xl text-gray-50 p-2 font-bold decoration-orange-400 underline">
