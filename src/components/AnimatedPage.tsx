@@ -3,6 +3,7 @@ import { FC } from "react";
 
 interface AnimatedPageProps {
   direction: "left" | "right";
+  children: React.ReactNode;
 }
 
 const variants = {
