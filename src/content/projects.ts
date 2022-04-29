@@ -86,7 +86,7 @@ export const projects: Record<string, Project> = {
     description:
       "I've participated in a 4 week challenge with the goal of developing a code editor and community web app. I've used React/NextJS and some technologies I didn't had the chance of using before.",
     images: [Alura1, Alura2, Alura3, Alura4],
-    link: "https://alura-challenge-all-dev.vercel.app",
+    link: "https://code.felipeafonso.com",
     workedWith: [
       "React.js",
       "Next.js",
