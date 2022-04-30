@@ -4,6 +4,7 @@ import { ImageCarousel } from "components/ImageCarousel";
 import { useRouter } from "next/router";
 import { NextPage } from "next";
 import { Project } from "types";
+import { useEffect } from "react";
 
 const bgOptions = ["#03A696", "#038C8C", "#025159", "#012E40"];
 
@@ -19,8 +20,10 @@ const Project: NextPage = () => {
     Math.floor(Math.random() * bgOptions.length),
     Math.floor(Math.random() * bgOptions.length),
   ];
-  if (!pid || (!selectedProject && typeof window !== "undefined"))
-    push("/#projects");
+
+  useEffect(() => {
+    if (!pid || !selectedProject) push("/#projects");
+  }, [pid, push, selectedProject]);
 
   return (
     (selectedProject && (
