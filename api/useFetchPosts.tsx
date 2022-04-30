@@ -16,28 +16,30 @@ export type PostSummary = {
   };
 };
 
-export const useFetchPosts = () =>
-  useQuery<PostSummary[]>("posts", async () => {
-    const { posts } = await request(
-      process.env.NEXT_CMS_API ?? "",
-      gql`
-        query {
-          posts {
-            id
-            title
-            tags
-            author {
-              name
-              picture {
-                url
-              }
-            }
-            coverImage {
+export const fetchPosts = async () => {
+  const { posts } = await request(
+    process.env.NEXT_CMS_API ?? "",
+    gql`
+      query {
+        posts {
+          id
+          title
+          tags
+          author {
+            name
+            picture {
               url
             }
           }
+          coverImage {
+            url
+          }
         }
-      `
-    );
-    return posts;
-  });
+      }
+    `
+  );
+  return posts as PostSummary[];
+};
+
+export const useFetchPosts = (data?: PostSummary[]) =>
+  useQuery<PostSummary[]>("posts", fetchPosts, { initialData: data });

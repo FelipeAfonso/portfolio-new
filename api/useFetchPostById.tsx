@@ -19,30 +19,32 @@ export type Post = {
   publishedAt: string;
 };
 
-export const useFetchPostById = (id: string) =>
-  useQuery<Post>("posts", async () => {
-    const { post } = await request(
-      process.env.NEXT_CMS_API ?? "",
-      gql`
-      query {
-        post(where: {id: "${id}"}) {
-          author {
-            name
-            picture {
-              url
-            }
-          }
-          content {
-            html
-          }
-          coverImage {
+export const fetchPostById = async (id: string) => {
+  const { post } = await request(
+    process.env.NEXT_CMS_API ?? "",
+    gql`
+    query {
+      post(where: {id: "${id}"}) {
+        author {
+          name
+          picture {
             url
           }
-          publishedAt
-          title
         }
+        content {
+          html
+        }
+        coverImage {
+          url
+        }
+        publishedAt
+        title
       }
-      `
-    );
-    return post;
-  });
+    }
+    `
+  );
+  return post as Post;
+};
+
+export const useFetchPostById = (id: string, data?: Post) =>
+  useQuery<Post>("posts", async () => fetchPostById(id), { initialData: data });

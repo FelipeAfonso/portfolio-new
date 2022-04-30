@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { FC } from "react";
 import { PostSummary } from "api/useFetchPosts";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 export const PostCard: FC<{ post: PostSummary }> = ({ post }) => {
+  const router = useRouter();
   return (
     <motion.div
       whileHover={{
@@ -15,7 +16,7 @@ export const PostCard: FC<{ post: PostSummary }> = ({ post }) => {
       viewport={{ once: true }}
       className="bg-white bg-opacity-20 min-w-full sm:min-w-min sm:w-96 rounded cursor-pointer"
     >
-      <Link href={`/blog/post/${post.id}`} passHref>
+      <div onClick={() => router.push(`/blog/post/${post.id}`)}>
         <motion.img
           animate={{ filter: "blur(0.5px)" }}
           whileHover={{ filter: "blur(0px)" }}
@@ -34,7 +35,7 @@ export const PostCard: FC<{ post: PostSummary }> = ({ post }) => {
             src={post.author.picture.url}
           />
         </div>
-      </Link>
+      </div>
     </motion.div>
   );
 };
