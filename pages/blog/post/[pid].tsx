@@ -59,7 +59,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
         ? context.params.pid[0]
         : context.params.pid)) ??
     "";
-  console.log("🚀 ~ id", id);
   const data = await fetchPostById(id);
   return {
     props: {
@@ -71,7 +70,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const bruteIds = await fetchPostsIds();
   const paths = bruteIds.map((id) => ({ params: { pid: id } }));
-  console.log("🚀 ~ paths", paths);
   return {
     paths,
     fallback: "blocking",

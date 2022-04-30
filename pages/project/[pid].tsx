@@ -11,6 +11,7 @@ const bgOptions = ["#03A696", "#038C8C", "#025159", "#012E40"];
 const Project: NextPage = () => {
   const {
     query: { pid },
+    push,
   } = useRouter();
   const selectedProject =
     pid && (projects[Array.isArray(pid) ? pid[0] : pid] as Project);
@@ -31,12 +32,12 @@ const Project: NextPage = () => {
     >
       <div className="flex gap-2">
         <div className="flex items-center gap-2">
-          <Link href="/#projects" passHref>
+          <div onClick={() => push("/#projects")}>
             <MdArrowBack
               className="text-gray-50 cursor-pointer rounded-full p-1 hover:bg-gray-50 hover:bg-opacity-20 hover:animate-pulse"
               size={28}
             />
-          </Link>
+          </div>
           <h1 className="text-4xl text-gray-50 font-bold">
             {selectedProject.title}
           </h1>
