@@ -19,7 +19,7 @@ const Project: NextPage = () => {
     Math.floor(Math.random() * bgOptions.length),
     Math.floor(Math.random() * bgOptions.length),
   ];
-  if (!pid || !selectedProject) {
+  if (!pid || (!selectedProject && typeof window !== "undefined")) {
     push("/#projects");
     return null;
   } else
