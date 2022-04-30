@@ -19,11 +19,11 @@ const Project: NextPage = () => {
     Math.floor(Math.random() * bgOptions.length),
     Math.floor(Math.random() * bgOptions.length),
   ];
-  if (!pid || (!selectedProject && typeof window !== "undefined")) {
+  if (!pid || (!selectedProject && typeof window !== "undefined"))
     push("/#projects");
-    return null;
-  } else
-    return (
+
+  return (
+    (selectedProject && (
       <div
         className={`min-h-screen min-w-full p-8`}
         style={{
@@ -99,7 +99,9 @@ const Project: NextPage = () => {
           </div>
         )}
       </div>
-    );
+    )) ||
+    null
+  );
 };
 
 export default Project;
