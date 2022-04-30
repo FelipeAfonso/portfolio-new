@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import React from "react";
 
 export type Experience = {
@@ -15,7 +16,7 @@ export type Project = {
   description: string;
   link?: string;
   workedWith?: string[];
-  images?: string[];
+  images?: StaticImageData[];
 };
 
 export type Library = {

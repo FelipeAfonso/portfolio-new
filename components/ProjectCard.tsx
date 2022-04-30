@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 import { FC } from "react";
-import { Link } from "react-router-dom";
-import { Project } from "../types";
+import { Project } from "types";
 
 export const ProjectCard: FC<{ project: Project; projectKey: string }> = ({
   project,
   projectKey,
 }) => {
+  const router = useRouter();
+
   return (
     <motion.div
       whileHover={{
@@ -18,12 +20,12 @@ export const ProjectCard: FC<{ project: Project; projectKey: string }> = ({
       viewport={{ once: true }}
       className="bg-white bg-opacity-20 min-w-full sm:min-w-min sm:w-96 rounded cursor-pointer"
     >
-      <Link to={`/project/${projectKey}`} reloadDocument>
+      <div onClick={() => router.push(`/project/${projectKey}`)}>
         {project.images?.[0] ? (
           <motion.img
             animate={{ filter: "blur(0.5px)" }}
             whileHover={{ filter: "blur(0px)" }}
-            src={project.images[0]}
+            src={project.images[0].src}
             className="min-w-full h-48 rounded-t object-contain bg-black bg-opacity-80"
           />
         ) : (
@@ -37,7 +39,7 @@ export const ProjectCard: FC<{ project: Project; projectKey: string }> = ({
         <p className="text-2xl text-gray-50 p-2 font-bold decoration-orange-400 underline">
           {project.title}
         </p>
-      </Link>
+      </div>
     </motion.div>
   );
 };

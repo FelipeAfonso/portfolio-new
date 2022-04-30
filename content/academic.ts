@@ -1,4 +1,4 @@
-import { Experience } from "../types";
+import { Experience } from "types";
 
 export const academic: Record<string, Experience> = {
   master: {

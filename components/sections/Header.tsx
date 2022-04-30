@@ -30,7 +30,8 @@ export const Header = () => {
       style={{ background: "linear-gradient(180deg, #03A696, #038C8C)" }}
     >
       <h1 className="text-6xl text-center text-gray-50">
-        Hi! I'm Felipe Afonso, <br /> a{" "}
+        {`Hi! I'm Felipe Afonso, `}
+        <br />
         <b>
           <u className="decoration-orange-400">Front End Developer.</u>
         </b>

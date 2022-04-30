@@ -1,4 +1,4 @@
-import { Project } from "../types";
+import { Project } from "types";
 import Flora1 from "./images/Flora-Mapa.png";
 import Flora2 from "./images/Flora-Home.png";
 import Flora3 from "./images/Flora-MapaF.png";
