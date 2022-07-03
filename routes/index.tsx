@@ -1,8 +1,8 @@
 /** @jsx h */
 import { h, Fragment } from 'preact'
 import { tw } from '@twind'
-import Counter from 'islands/Counter.tsx'
 import { Landing } from 'components/sections/Landing.tsx'
+import { Who } from 'components/sections/Who.tsx'
 
 //eef2ff
 //818cf8
@@ -15,6 +15,7 @@ export default function Home() {
       <div class={tw`xs:bg-indigo-50`}>
         <div class={tw`container px-4 mx-auto`}>
           <Landing />
+          <Who />
         </div>
       </div>
     </Fragment>
